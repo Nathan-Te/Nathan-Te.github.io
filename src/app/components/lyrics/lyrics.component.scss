@@ -1,21 +1,28 @@
-.carte-lyrics {
-    //background-color: #0f87a5;
-    background: #0f87a5;
-    background: -webkit-linear-gradient(0deg, #0f87a5 0%, #91c8d6 100%);
-    background: -o-linear-gradient(0deg, #0f87a5 0%, #91c8d6 100%);
-    background: -moz-linear-gradient(0deg, #0f87a5 0%, #91c8d6 100%);
-    background: linear-gradient(0deg, #0f87a5 0%, #91c8d6 100%);
+#paroles {
+    color: white; 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px; 
 }
-.titre-carte {
-    font-size: 30px;
-    color: black;
-    text-decoration: underline; 
-    text-align: center; 
-    font-weight: bold;
+.parole {
+    width: 40%;
+    margin-left: 10%;
 }
-.contenu-carte {
-    color: black;
-    font-size: 15px;
-    text-align: center; 
-    font-weight: bold; 
+#suggestions {
+    color: white; 
+    text-align: center;
+}
+#titreCartes {
+    font-size : 23px; 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(78, 228, 241); 
+}
+#titreCarteParoles{
+    font-size : 23px; 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(78, 228, 241);
+}
+#texteSaisie{
+    color: white; 
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px; 
 }

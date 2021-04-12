@@ -1,121 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import * as $ from "jquery";
+import { AccueilComponent } from './components/accueil/accueil.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'dashfront';
-
-  Test(){
-    $(document).ready(function() {
-      $().ready(function() {
-        var $sidebar = $('.sidebar');
-        var $navbar = $('.navbar');
-        var $main_panel = $('.main-panel');
-
-        var $full_page = $('.full-page');
-
-        var $sidebar_responsive = $('body > .navbar-collapse');
-        var sidebar_mini_active = true;
-        var white_color = false;
-
-        var window_width = $(window).width();
-
-        var fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
-
-        $('.fixed-plugin a').click(function(event) {
-          if ($(this).hasClass('switch-trigger')) {
-            if (event.stopPropagation) {
-              event.stopPropagation();
-            } else if (window.event) {
-              window.event.cancelBubble = true;
-            }
-          }
-        });
-
-        $('.fixed-plugin .background-color span').click(function() {
-          $(this).siblings().removeClass('active');
-          $(this).addClass('active');
-
-          var new_color = $(this).data('color');
-
-          if ($sidebar.length != 0) {
-            $sidebar.attr('data', new_color);
-          }
-
-          if ($main_panel.length != 0) {
-            $main_panel.attr('data', new_color);
-          }
-
-          if ($full_page.length != 0) {
-            $full_page.attr('filter-color', new_color);
-          }
-
-          if ($sidebar_responsive.length != 0) {
-            $sidebar_responsive.attr('data', new_color);
-          }
-        });
-
-        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (sidebar_mini_active == true) {
-            $('body').removeClass('sidebar-mini');
-            sidebar_mini_active = false;
-          } else {
-            $('body').addClass('sidebar-mini');
-            sidebar_mini_active = true;
-          }
-
-          // we simulate the window Resize so the charts will get updated in realtime.
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
-
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
-
-        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-          var $btn = $(this);
-
-          if (white_color == true) {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').removeClass('white-content');
-            }, 900);
-            white_color = false;
-          } else {
-
-            $('body').addClass('change-background');
-            setTimeout(function() {
-              $('body').removeClass('change-background');
-              $('body').addClass('white-content');
-            }, 900);
-
-            white_color = true;
-          }
-
-
-        });
-
-        $('.light-badge').click(function() {
-          $('body').addClass('white-content');
-        });
-
-        $('.dark-badge').click(function() {
-          $('body').removeClass('white-content');
-        });
-      });
-    });
+export class AppComponent implements OnInit{
+  /* On récupère le composant enfant : accueil */
+  @ViewChild(AccueilComponent) accueil: AccueilComponent;
+  /* On récupère le composant menu : accueil */
+  @ViewChild(MenuComponent) menu: MenuComponent;
+  /*
+   Le token de connexion à Spotify 
+  token:String;
+   Indique si l'utilisateur est connecté à Spotify ou non 
+  isConnected:boolean;
+  */
+  ngOnInit(): void{
   }
+  /* Liaison entre l'accueil --> menu de navigation */
+  changementMenu(dir: string): void{
+    this.menu.changementMenu(dir);
+  }
+  /* Liaison entre le menu de navigation --> accueil */
+  changementAccueil(dir: string): void{
+    this.accueil.changementAccueil(dir);
+  }
+  /* Liaison entre le A Propos en bas de l'application et la navigation du site */
+  activerAPropos(): void{
+    this.menu.activerAPropos();
+  }
+  /* Liaison entre le Contact en bas de l'application et la navigation du site */
+  activerContact(): void{
+    this.menu.activerContact();
+  }
+  
 }

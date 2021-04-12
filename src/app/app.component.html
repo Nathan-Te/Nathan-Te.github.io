@@ -3,65 +3,10 @@
 </head>
 <body class="">
   <div class="wrapper">
-    <div class="sidebar" data="grey">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
-      <div class="sidebar-wrapper">
-        <div class="logo">
-          <a href="javascript:void(0)" class="simple-text logo-mini">
-            CT
-          </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
-            ZikiFy
-          </a>
-        </div>
-        <ul class="nav">
-          <li class="active ">
-            <a href="./dashboard.html">
-              <i class="tim-icons icon-app"></i>
-              <p>Accueil</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
-              <i class="tim-icons icon-headphones"></i>
-              <p>Spotify</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="tim-icons icon-paper"></i>
-              <p>Lyrics</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-zoom-split"></i>
-              <p>Infos</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
-              <i class="tim-icons icon-calendar-60"></i>
-              <p>Concerts</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-send"></i>
-              <p>Contact</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="tim-icons icon-pin"></i>
-              <p>A propos</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    
+    <!-- Menu -->
+    <app-menu (changementAccueil)="changementAccueil($event)"></app-menu>
+
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
@@ -74,7 +19,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">ZikiFy</a>
+            <img class="navbar-brand" src="../assets/img/logoZikiFy.ico" width="170px">
           </div>
           <!-- A garder pour que le titre 'ZikiFy' soit centrer dans la barre du haut -->
           <div class="collapse navbar-collapse" id="navigation">
@@ -85,35 +30,21 @@
         </div>
       </nav>
       <!-- End Navbar -->
+
       <div class="content">
-        <app-bonjour-pseudo></app-bonjour-pseudo>
-        <div class="row">
-          <div class="col-lg-6">
-            <app-spotify></app-spotify>
-          </div>
-          <div class="col-lg-6">
-            <app-lyrics></app-lyrics>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <app-infos></app-infos>
-          </div>
-          <div class="col-lg-6">
-            <app-concert></app-concert>
-          </div>
-        </div>
+        <app-accueil (changementMenu)="changementMenu($event)"></app-accueil>
       </div>
+
       <footer class="footer">
         <div class="container-fluid">
           <ul class="nav">
             <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
+              <a (click)=activerAPropos() class="nav-link">
                 A propos
               </a>
             </li>
             <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
+              <a (click)=activerContact() class="nav-link">
                 Contact
               </a>
             </li>
@@ -128,54 +59,11 @@
       </footer>
     </div>
   </div>
-  <div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-      <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-      </a>
-      <ul class="dropdown-menu">
-        <li class="header-title"> Sidebar Background</li>
-        <li class="adjustments-line">
-          <a href="javascript:void(0)" class="switch-trigger background-color">
-            <div class="badge-colors text-center">
-              <span class="badge filter badge-primary active" data-color="primary"></span>
-              <span class="badge filter badge-info" data-color="blue"></span>
-              <span class="badge filter badge-success" data-color="green"></span>
-            </div>
-            <div class="clearfix"></div>
-          </a>
-        </li>
-        <li class="adjustments-line text-center color-change">
-          <span class="color-label">LIGHT MODE</span>
-          <span class="badge light-badge mr-2"></span>
-          <span class="badge dark-badge ml-2"></span>
-          <span class="color-label">DARK MODE</span>
-        </li>
-        <li class="button-container">
-          <a href="https://www.creative-tim.com/product/black-dashboard" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-          <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
-            Documentation
-          </a>
-        </li>
-        <li class="header-title">Thank you for 95 shares!</li>
-        <li class="button-container text-center">
-          <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
-          <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
-          <br>
-          <br>
-          <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-        </li>
-      </ul>
-    </div>
-  </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
