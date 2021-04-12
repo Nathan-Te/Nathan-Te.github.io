@@ -17,16 +17,30 @@
             </li>
             
             <!-- Spotify -->
-            <li *ngIf="activeSpotify" class="active">
+            <li *ngIf="activeSpotify && isConnected" class="active">
                 <a (click)="activerSpotify();">
                     <i class="tim-icons icon-headphones"></i>
                     <p>Spotify</p>
                 </a>
             </li>
-            <li *ngIf="!activeSpotify">
+            <li *ngIf="!activeSpotify && isConnected">
                 <a (click)="activerSpotify();">
                     <i class="tim-icons icon-headphones"></i>
                     <p>Spotify</p>
+                </a>
+            </li>
+
+            <!-- Youtube -->
+            <li *ngIf="activeSpotify && !isConnected">
+                <a (click)="activerSpotify();">
+                    <i class="tim-icons icon-headphones"></i>
+                    <p>Youtube</p>
+                </a>
+            </li>
+            <li *ngIf="!activeSpotify && !isConnected">
+                <a (click)="activerSpotify();">
+                    <i class="tim-icons icon-headphones"></i>
+                    <p>Youtube</p>
                 </a>
             </li>
 

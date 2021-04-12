@@ -234,6 +234,7 @@ export class AccueilComponent implements OnInit{
       this.token = accessToken.toString();
       /* On est maintenant connecté à Spotify (on peut donc afficher la page Spotify au lieu de Youtube */
       this.isConnected = true;
+      this.changementMenu.emit("connected")
       console.log("Le token d'accès est : " + this.token);
   }
 

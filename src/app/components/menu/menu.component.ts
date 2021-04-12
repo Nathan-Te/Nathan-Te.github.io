@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   activeConcert:boolean
   activeContact:boolean 
   activeAPropos:boolean 
+  isConnected:boolean 
 
   //Envoie d'une information
   @Output() changementAccueil = new EventEmitter();
@@ -24,6 +25,7 @@ export class MenuComponent implements OnInit {
   //Initialisation des variables
   ngOnInit(): void {
     this.activeAccueil = true;
+    this.isConnected = false; 
     this.activeSpotify = false; 
     this.activeLyrics = false;
     this.activeInfos = false; 
@@ -52,6 +54,9 @@ export class MenuComponent implements OnInit {
         break;
       case "contact": 
         this.activerContact_Event(); 
+        break; 
+      case "connected": 
+        this.activerConnected_Event(); 
         break; 
       default:
         break;
@@ -217,5 +222,11 @@ export class MenuComponent implements OnInit {
     this.activeConcert = false; 
     this.activeContact = false; 
     this.activeAPropos = true; 
+  }
+
+
+  // Affiche Spotify à la place de Youtube dans le menu 
+  activerConnected_Event() : void {
+    this.isConnected = true; 
   }
 }
