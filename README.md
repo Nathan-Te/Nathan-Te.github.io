@@ -1,2 +1,2 @@
-# education.github.io
+# Nathan-Te.github.io
 Module Gestion Projet M1 INFO - TESSIER - MOTTAY - MAINGUY - MOTTIER
