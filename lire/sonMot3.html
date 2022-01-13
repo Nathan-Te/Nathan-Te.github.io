@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Education</title>
+  </head>
+
+  <body>
+
+    <br /><br />
+    <h2>Lire - Associer un son à un mot</h2>
+    <!-- Explication des règles du jeu  -->
+    <p> Dans cet exercice il faut trouver le mot correspondant au son. </p>
+    <center>
+      <figure>
+      </br>
+          <div id="q">
+          <figcaption><b>Ecoutez et trouver le mot associé : </b></figcaption>
+          </br>
+          <audio
+              controls
+              src="../audio/bruitDouche.mp3">
+                  Your browser does not support the
+                  <code>audio</code> element.
+          </audio>
+          </div>
+      </figure>
+  </center>
+
+    <br/><br/>
+  
+    <!-- Réponses possibles  -->
+    <form>
+      <!-- Casquette  -->
+      <input type="radio" id="ok" name="q7Lire" value="toiture">
+      <label for="rep1">Douche</label>
+      <!-- Casque  -->
+      <input type="radio" id="rep1" name="q7Lire" value="monture">
+      <label for="rep2">Mouche</label>
+      <!-- Masque  -->
+      <input type="radio" id="rep2" name="q7Lire" value="voiture">
+      <label for="rep3">Couche</label>
+      <br/><br/>
+      <input type="button" id="btnValidation" name="btnValidation" value="Confirmer" onClick="Validation()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+      <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)" disabled>
+    </form>
+
+    <div id="reponse" > </div>
+    
+  </body>
+
+<script>
+  var reponse = document.getElementById('reponse');
+
+  function EffacerRep(){
+    btnRadioClick();
+    var btnRadio = document.getElementsByName("q7Lire");
+    for(var i=0;i<btnRadio.length;i++)
+      btnRadio[i].checked = false;
+    reponse.innerHTML = " ";
+    document.getElementById("btnValidation").disabled = false; 
+    document.getElementById("btnReset").disabled = true;
+  }
+
+  function Validation(){    
+    btnRadioUnclick();
+    if (document.getElementById('ok').checked) {
+      reponse.innerHTML = 'Félicitations ';
+      document.getElementById("btnValidation").disabled = true; 
+    }
+    else{
+      reponse.innerHTML = 'Faux, essayez encore !';
+      document.getElementById("btnReset").disabled = false; 
+      document.getElementById("btnValidation").disabled = true; 
+    }
+  }
+
+  function btnRadioUnclick(){
+    document.getElementById("ok").disabled = true;
+    document.getElementById("rep1").disabled = true;
+    document.getElementById("rep2").disabled = true;
+  }
+
+  function btnRadioClick(){
+    document.getElementById("ok").disabled = false;
+    document.getElementById("rep1").disabled = false;
+    document.getElementById("rep2").disabled = false;
+  }
+</script>
+</html>
