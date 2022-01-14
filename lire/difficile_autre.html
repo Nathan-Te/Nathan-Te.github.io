@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <title>Serious Game</title>
+  </head>
+
+  <body>
+
+    <br /><br />
+    <h3> Serious Game </h3>
+    <h2> Lire - Autre - Difficile </h2>
+    <!-- Explication des règles du jeu  -->
+    <div id="q">
+      Selectionner un exercice : <br>
+      <a href="./d01_alphabet.html"><input type="button" style="width: 30%;" value="01 Lettres manquantes" id="bouton_01" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+      <a href="./d02_imagePhrase.html"><input type="button" style="width: 30%;" value="02 Trouver image" id="bouton_02" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+      <a href="./d04_sonMot.html"><input type="button" style="width: 30%;" value="03 Trouver son" id="bouton_04" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+      <a href="./d05_sonMot.html"><input type="button" style="width: 30%;" value="04 Trouver son" id="bouton_05" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+    </div>
+    <br/><br/>
+
+    <br/><br/>
+    <p style="color: grey" > Ce serious game a été créé par Mathilde Mottay, Anaïs Mottier, Nathan Tessier, Clément Mainguy. </p>
+    <br/>
+  </body>
+
+  <a href="./autre.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+
+  <script>
+
+    function highlight_button(bouton){
+      bouton.style.backgroundColor = "green";
+    }
+
+    function delight_button(bouton){
+      bouton.style.backgroundColor = "#333333";
+    }
+
+  </script>
+</html>
