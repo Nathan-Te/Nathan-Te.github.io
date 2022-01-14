@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Education</title>
+  </head>
+
+  <body>
+
+    <br /><br />
+    <h2>Lire - Reconstituer l'alphabet</h2>
+    <!-- Explication des règles du jeu  -->
+    <p> Dans cet exercice il faut trouver les lettres manquantes. </p>
+    
+    <center>
+      <p>Ecrivez les lettres manquantes en majuscules sans espaces.</p>
+      <img src="../img/trouveLettre2.jpg" style="margin-right:100px" width="250px"/>   
+      </br></br>
+      <input type="text" style="margin-right:100px" id="rep" size="30"> 
+      </br></br>
+    </center>
+
+    <br/><br/>
+  
+    <!-- Réponses possibles  -->
+    <form>
+      <input type="button" id="btnValidation" name="btnValidation" value="Confirmer" onClick="Validation()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+      <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)" disabled>
+    </form>
+
+    <div id="reponse"> </div>
+    
+  </body>
+
+<script>
+  var reponse = document.getElementById('reponse');
+  var  val = document.getElementById("rep"); 
+
+  function EffacerRep(){
+    val.value = ''; 
+    val.disabled = false;
+    document.getElementById("btnValidation").disabled = false; 
+    document.getElementById("btnReset").disabled = true;
+  }
+
+  function Validation(){
+    val.disabled = true;
+    if (val.value == "BDEFHKNOQWY") {
+      reponse.innerHTML = 'Félicitations ';
+      document.getElementById("btnValidation").disabled = true; 
+    }
+    else{
+      reponse.innerHTML = 'Faux, essayez encore !';
+      document.getElementById("btnReset").disabled = false; 
+      document.getElementById("btnValidation").disabled = true; 
+    }
+  }
+</script>
+</html>
