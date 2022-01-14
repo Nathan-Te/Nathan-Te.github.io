@@ -13,9 +13,8 @@
     <!-- Explication des règles du jeu  -->
     <div id="q">
     Dans cet exercice il faut trouver l'image correspondante à la phrase. <br/><br/>
-
-     Il porte un casque.
-    </div><br/>
+    Il porte un casque.
+    </div>
 
     <br/><br/>
   
@@ -36,16 +35,17 @@
     </form>
 
     <br/>
-    <div id="reponse" style="font-size: 30px;"> </div>    
+    <div id="reponse" style="font-size: 30px;"> </div> 
+
   </body>
 </br>
   <a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
 </br></br></br></br></br></br>
+
 <script>
   var reponse = document.getElementById('reponse');
 
   function EffacerRep(){
-    btnRadioClick();
     var btnRadio = document.getElementsByName("q1Lire");
     for(var i=0;i<btnRadio.length;i++)
       btnRadio[i].checked = false;
@@ -53,7 +53,6 @@
   }
 
   function Validation(){   
-    btnRadioUnclick(); 
     if (document.getElementById('ok').checked) {
       reponse.innerHTML = 'Félicitations ';
     }
