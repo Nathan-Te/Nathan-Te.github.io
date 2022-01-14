@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style01.css">
+    <title>Education</title>
+  </head>
+
+
+
+  <body>
+    <h3>Mes premieres opérations</h3>
+    <!-- Explication des règles du jeu  -->
+    <div id="q">
+      Effectue les additions suivantes et donne les résultats : 
+    </div>
+    <br/><br/>
+
+
+     <!-- Formulaire -->
+    <h2>6  -  4  =   
+    <input type="text" id="nb1" size="8">
+    </h2>
+
+    <h2>
+      4  -  4  =   
+      <input type="text" id="nb2" size="8">
+    </h2>
+
+
+    </br></br>
+    <input type="button" value="Valider" onClick="verifieReponse()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+    <input type="button" value="Effacer mes réponses" onClick="effacer()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+
+    </br></br>
+    <div id="message" hidden=true>Bravo, tu as réussi !</div>
+    
+  </br>
+  </body>
+
+  <a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
+<script>
+
+    function highlight_button(bouton){
+      bouton.style.backgroundColor = "green";
+    }
+
+    function delight_button(bouton){
+      bouton.style.backgroundColor = "#333333";
+    }
+
+    var m1 = document.getElementById("nb1"); 
+    var m2 = document.getElementById("nb2");   
+    
+    function verifieReponse(){
+        var erreur = 0
+
+        if (m1.value == 2){
+            m1.readOnly = true; 
+            m1.style.borderColor = "green"; 
+        }
+        else {
+            erreur += 1; 
+            m1.style.borderColor = "red"; 
+        }
+        if (m2.value == 0){
+            m2.readOnly = true; 
+            m2.style.borderColor = "green"; 
+        }
+        else {
+            erreur += 1; 
+            m2.style.borderColor = "red";
+        }
+
+        if(erreur == 0){
+            m = document.getElementById("message"); 
+            m.hidden=false; 
+        }
+    
+    }
+
+   function effacer(){
+    m1.value = ''; 
+    m1.readOnly = false;
+    m2.value = ''; 
+    m2.readOnly = false;       
+    }
+
+</script>
+</html>
