@@ -8,20 +8,19 @@
 
   <body>    
       
-    <h2>1 image, 1 mot - Mots 5 lettres</h2>
+    <h2>1 image, 1 mot - Mots 9 lettres</h2>
     <div id="q">
         Ecrivez ce qui est représenté sur chaque image
     </div>
-
     <!-- Affichage du score -->
     <div id="score"><h3>Tu as trouvé 0 mot sur 5.</h3></div>
 
     <center>
-        <img src="../img/tigre.jpg" style="margin-right:100px" width="250px" alt="Tigre"/>   
-        <img src="../img/clown.jpeg" style="margin-right:100px" width="150px" alt="Clown"/>   
-        <img src="../img/glace.jpg" style="margin-right:100px" width="180px" alt="Glace"/>   
-        <img src="../img/rhume.jpg" style="margin-right:100px" width="250px" alt="Rhume"/>   
-        <img src="../img/harpe.jpg" style="margin-right:100px" width="180px" alt="Harpe"/>   
+        <img src="../img/boomerang.jpg" style="margin-right:100px" width="200px" alt="Boomerang"/>   
+        <img src="../img/framboise.jpg" style="margin-right:100px" width="200px" alt="Framboise"/>   
+        <img src="../img/croissant.jpeg" style="margin-right:100px" width="200px" alt="Croissant"/>   
+        <img src="../img/ambulance.jpg" style="margin-right:100px" width="200px" alt="Ambulance"/>   
+        <img src="../img/crocodile.jpg" style="margin-right:100px" width="200px" alt="Crocodile"/>   
 
         </br></br>
         <input type="text" style="margin-right:100px" id="mot1" size="18">    
@@ -43,6 +42,9 @@
     </br></br>
 </body>
 
+<a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
+
 <script>
 
     var  mot1 = document.getElementById("mot1"); 
@@ -56,7 +58,7 @@
 
         if(btn.value == "Besoin d'une aide ?"){
             btn.value = "Cacher l'aide"
-            document.getElementById("aide").innerHTML = "<h4>Lettres des mots (de gauche à droite) : </h4><p> Mot 1 = g - e - r - t - i</p><p> Mot 2 = o - w - n - c - l</p><p> Mot 3 = a - g - l - c - e</p><p> Mot 4 = h - e - u - m - r</p><p> Mot 5 = e - p - a - r - h</p>"; 
+            document.getElementById("aide").innerHTML = "<h4>Lettres des mots (de gauche à droite) : </h4><p> Mot 1 = r - o - m - n - b - a - o - e - g </p><p> Mot 2 = a - s - o - i -m - r - b - f - e</p><p> Mot 3 = a - i - t - o - s - c - n - s - r</p><p> Mot 4 = a - m - b - a - c - u - n - e - l</p><p> Mot 5 = o - e - o - r - i - d - c - l - c</p>"; 
         }
         else {
             btn.value = "Besoin d'une aide ?"
@@ -80,23 +82,23 @@
     function actualiser_score(){
         var score = 0; 
 
-        if (mot1.value == "tigre"){
+        if (mot1.value == "boomerang"){
             score += 1; 
         }
 
-        if (mot2.value == "clown"){
+        if (mot2.value == "framboise"){
             score += 1; 
         }
 
-        if (mot3.value == "glace"){
+        if (mot3.value == "croissant"){
             score += 1; 
         }
 
-        if (mot4.value == "rhume"){
+        if (mot4.value == "ambulance"){
             score += 1;
         }
 
-        if (mot5.value == "harpe"){
+        if (mot5.value == "crocodile"){
             score += 1; 
         }
 
@@ -110,7 +112,7 @@
 
     function verifier_texte_a_trous(){
 
-        if (mot1.value == "tigre"){
+        if (mot1.value == "boomerang"){
              mot1.readOnly = true; 
              mot1.style.borderColor = "green"; 
         }
@@ -118,7 +120,7 @@
             mot1.style.borderColor = "red"; 
         }
 
-        if (mot2.value == "clown"){
+        if (mot2.value == "framboise"){
              mot2.readOnly = true; 
              mot2.style.borderColor = "green"; 
         }
@@ -126,7 +128,7 @@
             mot2.style.borderColor = "red"; 
         }
 
-        if (mot3.value == "glace"){
+        if (mot3.value == "croissant"){
              mot3.readOnly = true; 
              mot3.style.borderColor = "green"; 
         }
@@ -134,7 +136,7 @@
             mot3.style.borderColor = "red"; 
         }
 
-        if (mot4.value == "rhume"){
+        if (mot4.value == "ambulance"){
              mot4.readOnly = true; 
              mot4.style.borderColor = "green"; 
         }
@@ -142,7 +144,7 @@
             mot4.style.borderColor = "red"; 
         }
 
-        if (mot5.value == "harpe"){
+        if (mot5.value == "crocodile"){
              mot5.readOnly = true; 
              mot5.style.borderColor = "green"; 
         }

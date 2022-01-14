@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
     <title>Education</title>
   </head>
 
@@ -19,7 +20,7 @@
           </br>
           <audio
               controls
-              src="../audio/bruitMouche.mp3">
+              src="../audio/bruitDouche.mp3">
                   Your browser does not support the
                   <code>audio</code> element.
           </audio>
@@ -32,14 +33,14 @@
     <!-- Réponses possibles  -->
     <form>
       <!-- Casquette  -->
-      <input type="radio" id="rep1" name="q8Lire" value="toiture">
-      <label for="rep1">Fourche</label>
+      <input type="radio" id="ok" name="q7Lire" value="toiture">
+      <label for="rep1">Douche</label>
       <!-- Casque  -->
-      <input type="radio" id="ok" name="q8Lire" value="monture">
+      <input type="radio" id="rep1" name="q7Lire" value="monture">
       <label for="rep2">Mouche</label>
       <!-- Masque  -->
-      <input type="radio" id="rep2" name="q8Lire" value="voiture">
-      <label for="rep3">Louche</label>
+      <input type="radio" id="rep2" name="q7Lire" value="voiture">
+      <label for="rep3">Couche</label>
       <br/><br/>
       <input type="button" id="btnValidation" name="btnValidation" value="Confirmer" onClick="Validation()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
       <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)" disabled>
@@ -49,12 +50,14 @@
     
   </body>
 
+  <a href="./difficile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
 <script>
   var reponse = document.getElementById('reponse');
 
   function EffacerRep(){
     btnRadioClick();
-    var btnRadio = document.getElementsByName("q8Lire");
+    var btnRadio = document.getElementsByName("q7Lire");
     for(var i=0;i<btnRadio.length;i++)
       btnRadio[i].checked = false;
     reponse.innerHTML = " ";

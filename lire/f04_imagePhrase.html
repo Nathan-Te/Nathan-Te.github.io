@@ -2,44 +2,33 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
     <title>Education</title>
   </head>
 
   <body>
 
     <br /><br />
-    <h2>Lire - Associer un son à un mot</h2>
+    <h2>Lire - Associer une image à une phrase</h2>
     <!-- Explication des règles du jeu  -->
-    <p> Dans cet exercice il faut trouver le mot correspondant au son. </p>
-    <center>
-      <figure>
-      </br>
-          <div id="q">
-          <figcaption><b>Ecoutez et trouver le mot associé : </b></figcaption>
-          </br>
-          <audio
-              controls
-              src="../audio/bruitPoule.mp3">
-                  Your browser does not support the
-                  <code>audio</code> element.
-          </audio>
-          </div>
-      </figure>
-  </center>
+    <p> Dans cet exercice il faut trouver l'image correspondante à la phrase. </p>
+    <div id="q">
+     Il porte un casque.
+    </div>
 
     <br/><br/>
   
     <!-- Réponses possibles  -->
     <form>
       <!-- Casquette  -->
-      <input type="radio" id="rep1" name="q6Lire" value="toiture">
-      <label for="rep1">Loupe</label>
+      <input type="radio" id="rep1" name="q1Lire" value="casquette">
+      <label for="rep1"><img src="../img/casquette.png" style="width:100px;height:150px;" value="rep1"></label>
       <!-- Casque  -->
-      <input type="radio" id="ok" name="q6Lire" value="monture">
-      <label for="rep2">Poule</label>
+      <input type="radio" id="ok" name="q1Lire" value="casque">
+      <label for="rep2"><img src="../img/casque.png" style="width:200px;height:150px;" value="rep2"></label>
       <!-- Masque  -->
-      <input type="radio" id="rep2" name="q6Lire" value="voiture">
-      <label for="rep3">Soupe</label>
+      <input type="radio" id="rep2" name="q1Lire" value="masque">
+      <label for="rep3"><img src="../img/masque.png" style="width:150px;height:150px;" value="rep3"></label>
       <br/><br/>
       <input type="button" id="btnValidation" name="btnValidation" value="Confirmer" onClick="Validation()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
       <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)" disabled>
@@ -49,21 +38,23 @@
     
   </body>
 
+  <a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
 <script>
   var reponse = document.getElementById('reponse');
 
   function EffacerRep(){
     btnRadioClick();
-    var btnRadio = document.getElementsByName("q6Lire");
+    var btnRadio = document.getElementsByName("q1Lire");
     for(var i=0;i<btnRadio.length;i++)
       btnRadio[i].checked = false;
-    reponse.innerHTML = " ";
+    reponse.innerHTML = " "
     document.getElementById("btnValidation").disabled = false; 
     document.getElementById("btnReset").disabled = true;
   }
 
-  function Validation(){    
-    btnRadioUnclick();
+  function Validation(){   
+    btnRadioUnclick(); 
     if (document.getElementById('ok').checked) {
       reponse.innerHTML = 'Félicitations ';
       document.getElementById("btnValidation").disabled = true; 

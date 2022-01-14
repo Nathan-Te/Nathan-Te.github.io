@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
     <title>Education</title>
   </head>
 
@@ -13,8 +14,8 @@
     <p> Dans cet exercice il faut trouver les lettres manquantes. </p>
     
     <center>
-      <p>Ecrivez les lettres manquantes en minuscules sans espaces.</p>
-      <img src="../img/trouveLettre3.png" style="margin-right:100px" width="250px"/>   
+      <p>Ecrivez les lettres manquantes en majuscules sans espaces.</p>
+      <img src="../img/trouveLettre2.jpg" style="margin-right:100px" width="250px"/>   
       </br></br>
       <input type="text" style="margin-right:100px" id="rep" size="30"> 
       </br></br>
@@ -32,6 +33,8 @@
     
   </body>
 
+  <a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
 <script>
   var reponse = document.getElementById('reponse');
   var  val = document.getElementById("rep"); 
@@ -45,7 +48,7 @@
 
   function Validation(){
     val.disabled = true;
-    if (val.value == "cklmnorsvwx") {
+    if (val.value == "BDEFHKNOQWY") {
       reponse.innerHTML = 'Félicitations ';
       document.getElementById("btnValidation").disabled = true; 
     }

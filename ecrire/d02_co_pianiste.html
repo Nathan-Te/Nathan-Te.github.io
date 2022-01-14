@@ -8,10 +8,10 @@
 
   <body>    
       
-    <h2>Compréhension orale - A Léopoldine de Victor Hugo</h2>
+    <h2>Compréhension orale - Le pianiste</h2>
 
     <center>
-        <img src="../img/leopoldine.jpg" width="200px" alt="Portrait de Léopoldine"/>
+        <img src="../img/pianiste.jpg" width="200px" alt="Pianiste"/>
 
         <figure>
         </br>
@@ -20,84 +20,72 @@
             </br>
             <audio
                 controls
-                src="../audio/leopoldine.mp3">
+                src="../audio/pianiste.mp3">
                     Your browser does not support the
                     <code>audio</code> element.
             </audio>
+            </div>
         </figure>
     </center>
 
     <!-- Affichage du score -->
-    <div id="score"><h3>Tu as trouvé 0 mot sur 13.</h3></div>
+    <div id="score"><h3>Tu as trouvé 0 mot sur 15.</h3></div>
 
-    <!-- Texte à trous -->
-    Elle avait pris ce pli dans son âge 
+     <!-- Texte à trous -->
+    Le corps bien droit, les 
     <input type="text" id="mot1">
-    </br></br>
-    
-    De venir dans ma 
+    posées à plat sur les genoux, il 
     <input type="text" id="mot2">
-    un peu chaque matin ; 
-    </br></br>
-
-    Je l'attendais ainsi qu'un 
+    . L'
     <input type="text" id="mot3">
-    qu'on espère ; 
-    </br></br>
-
-    Elle entrait et disait "
+    , à sa gauche, joue.</br></br>
+    
+    Il 
     <input type="text" id="mot4">
-    mon petit père" ; 
-    </br></br>
-
-    Prenait ma plume, ouvrait mes livres, 
+    . Ses bras se lèvent 
     <input type="text" id="mot5">
-    </br></br>
-
-    Sur mon lit, 
-    <input type="text" id="mot6">
-    mes papiers, et riait, 
+    , c'est à lui. 
     </br></br>
     
-    Puis soudain s'en allait comme un 
+    Son 
+    <input type="text" id="mot6">
+    se détend ; ses doigts courent sur le 
     <input type="text" id="mot7">
-    qui passe. 
-    </br></br>
-
-    Alors, je reprenais la tête un peu 
+    du piano blanc. Il aime cette 
     <input type="text" id="mot8">
-    lasse, </br></br>
+    ; c'est sa vie.     
+    </br></br>
 
-    Mon oeuvre 
+    Il a oublié les centaines de 
     <input type="text" id="mot9">
-    , et, tout en écrivant,
-    </br></br>
-
-    Parmi mes 
+    venues l'écouter. Il s'est plongé dans un autre 
     <input type="text" id="mot10">
-    je recontrais souvent 
-    </br></br>
- 
-    Quelque 
+    , et sur son 
     <input type="text" id="mot11">
-    folle et qu'elle avait tracée, 
+    se lit une agitation extrême. 
     </br></br>
 
-    Et mainte page blanche entre ses mains 
+    Puis, quand la dernière 
     <input type="text" id="mot12">
-    </br></br>
-
-    Où, je ne sais 
+    s'est échappée de ses 
     <input type="text" id="mot13">
-    , venaient mes plus doux vers. 
+    , son visage redevient 
+    <input type="text" id="mot14">
+    . 
+    </br></br>
+    Alors, il se tourne vers le 
+    <input type="text" id="mot15">
+    qui applaudit. 
 
     <!-- Boutons pour valider et effacer mes réponses -->
     </br> </br></br>
     <input type="button" value="Valider" onClick="valider()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
     <input type="button" value="Effacer mes réponses" onClick="effacer()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
     </br></br>
-  </body>
+</body>
 
+<a href="./difficile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
 <script>
 
     var mot1 = document.getElementById("mot1"); 
@@ -113,7 +101,8 @@
     var mot11 = document.getElementById("mot11"); 
     var mot12 = document.getElementById("mot12"); 
     var mot13 = document.getElementById("mot13"); 
-
+    var mot14 = document.getElementById("mot14"); 
+    var mot15 = document.getElementById("mot15"); 
 
     function highlight_button(bouton){
       bouton.style.backgroundColor = "green";
@@ -131,73 +120,81 @@
     function actualiser_score(){
         var score = 0; 
 
-        if (mot1.value == "enfantin"){
+        if (mot1.value == "mains"){
             score += 1; 
         }
 
-        if (mot2.value == "chambre"){
+        if (mot2.value == "attend"){
             score += 1; 
         }
 
-        if (mot3.value == "rayon"){
+        if (mot3.value == "orchestre"){
             score += 1; 
         }
 
-        if (mot4.value == "bonjour"){
+        if (mot4.value == "écoute"){
             score += 1; 
         }
 
-        if (mot5.value == "s'asseyait"){
+        if (mot5.value == "légèrement"){
             score += 1; 
         }
 
-        if (mot6.value == "dérangeait"){
+        if (mot6.value == "corps"){
             score += 1; 
         }
 
-        if (mot7.value == "oiseau"){
+        if (mot7.value == "clavier"){
             score += 1; 
         }
 
-        if (mot8.value == "moins"){
+        if (mot8.value == "musique"){
             score += 1; 
         }
 
-        if (mot9.value == "interrompue"){
+        if (mot9.value == "personnes"){
             score += 1; 
         }
 
-        if (mot10.value == "manuscrits"){
+        if (mot10.value == "univers"){
             score += 1; 
         }
 
-        if (mot11.value == "arabesque"){
+        if (mot11.value == "visage"){
             score += 1; 
         }
 
-        if (mot12.value == "froissée"){
+        if (mot12.value == "note"){
             score += 1; 
         }
 
-        if (mot13.value == "comment"){
+        if (mot13.value == "doigts"){
+            score += 1; 
+        }
+
+        if (mot14.value == "lisse"){
+            score += 1; 
+        }
+
+        if (mot15.value == "public"){
             score += 1; 
         }
 
         if(score > 1){
-            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mots sur 13.</h3>";
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mots sur 15.</h3>";
         }
         else {
-            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mot sur 13.</h3>";
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mot sur 15.</h3>";
         }
     }
 
     function reset_score(){
-        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 mot sur 13.</h3>";
+        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 mot sur 15.</h3>";
     }
 
     function verifier_texte_a_trous(){
 
-        if (mot1.value == "enfantin"){
+        if (mot1.value == "mains"){
             mot1.readOnly = true; 
             mot1.style.borderColor = "green"; 
         }
@@ -205,7 +202,7 @@
             mot1.style.borderColor = "red"; 
         }
 
-        if (mot2.value == "chambre"){
+        if (mot2.value == "attend"){
             mot2.readOnly = true; 
             mot2.style.borderColor = "green"; 
         }
@@ -213,7 +210,7 @@
             mot2.style.borderColor = "red"; 
         }
 
-        if (mot3.value == "rayon"){
+        if (mot3.value == "orchestre"){
             mot3.readOnly = true; 
             mot3.style.borderColor = "green"; 
         }
@@ -221,7 +218,7 @@
             mot3.style.borderColor = "red"; 
         }
 
-        if (mot4.value == "bonjour"){
+        if (mot4.value == "écoute"){
             mot4.readOnly = true; 
             mot4.style.borderColor = "green"; 
         }
@@ -229,7 +226,7 @@
             mot4.style.borderColor = "red"; 
         }
 
-        if (mot5.value == "s'asseyait"){
+        if (mot5.value == "légèrement"){
             mot5.readOnly = true; 
             mot5.style.borderColor = "green"; 
         }
@@ -237,7 +234,7 @@
             mot5.style.borderColor = "red"; 
         }
 
-        if (mot6.value == "dérangeait"){
+        if (mot6.value == "corps"){
             mot6.readOnly = true; 
             mot6.style.borderColor = "green"; 
         }
@@ -245,7 +242,7 @@
             mot6.style.borderColor = "red"; 
         }
 
-        if (mot7.value == "oiseau"){
+        if (mot7.value == "clavier"){
             mot7.readOnly = true; 
             mot7.style.borderColor = "green"; 
         }
@@ -253,7 +250,7 @@
             mot7.style.borderColor = "red"; 
         }
 
-        if (mot8.value == "moins"){
+        if (mot8.value == "musique"){
             mot8.readOnly = true; 
             mot8.style.borderColor = "green"; 
         }
@@ -261,7 +258,7 @@
             mot8.style.borderColor = "red"; 
         }
 
-        if (mot9.value == "interrompue"){
+        if (mot9.value == "personnes"){
             mot9.readOnly = true; 
             mot9.style.borderColor = "green"; 
         }
@@ -269,7 +266,7 @@
             mot9.style.borderColor = "red"; 
         }
 
-        if (mot10.value == "manuscrits"){
+        if (mot10.value == "univers"){
             mot10.readOnly = true; 
             mot10.style.borderColor = "green"; 
         }
@@ -277,7 +274,7 @@
             mot10.style.borderColor = "red"; 
         }
 
-        if (mot11.value == "arabesque"){
+        if (mot11.value == "visage"){
             mot11.readOnly = true; 
             mot11.style.borderColor = "green"; 
         }
@@ -285,7 +282,7 @@
             mot11.style.borderColor = "red"; 
         }
 
-        if (mot12.value == "froissée"){
+        if (mot12.value == "note"){
             mot12.readOnly = true; 
             mot12.style.borderColor = "green"; 
         }
@@ -293,19 +290,35 @@
             mot12.style.borderColor = "red"; 
         }
 
-        if (mot13.value == "comment"){
+        if (mot13.value == "doigts"){
             mot13.readOnly = true; 
             mot13.style.borderColor = "green"; 
         }
         else {
             mot13.style.borderColor = "red"; 
         }
+
+        if (mot14.value == "lisse"){
+            mot14.readOnly = true; 
+            mot14.style.borderColor = "green"; 
+        }
+        else {
+            mot14.style.borderColor = "red"; 
+        }
+
+        if (mot15.value == "public"){
+            mot15.readOnly = true; 
+            mot15.style.borderColor = "green"; 
+        }
+        else {
+            mot15.style.borderColor = "red"; 
+        }
     }
 
    function effacer(){
 
         reset_score(); 
-        
+
         mot1.value = ''; 
         mot1.readOnly = false;
         mot1.style.borderColor = "#2f4f4f"; 
@@ -357,6 +370,14 @@
         mot13.value = ''; 
         mot13.readOnly = false; 
         mot13.style.borderColor = "#2f4f4f"; 
+
+        mot14.value = ''; 
+        mot14.readOnly = false; 
+        mot14.style.borderColor = "#2f4f4f"; 
+
+        mot15.value = ''; 
+        mot15.readOnly = false; 
+        mot15.style.borderColor = "#2f4f4f"; 
     }
 </script>
 </html>

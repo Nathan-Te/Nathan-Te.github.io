@@ -1,89 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../style.css">
     <title>Education</title>
   </head>
 
-  <body>    
-      
-    <h2>Compréhension orale - Le pianiste</h2>
+  <body>
 
-    <center>
-        <img src="../img/pianiste.jpg" width="200px" alt="Pianiste"/>
+    <h2>Texte à trous - Paul va à la poste</h2>
 
-        <figure>
-        </br>
-            <div id="q">
-            <figcaption><b>Ecoutez et reconstituez le texte : </b></figcaption>
-            </br>
-            <audio
-                controls
-                src="../audio/pianiste.mp3">
-                    Your browser does not support the
-                    <code>audio</code> element.
-            </audio>
-            </div>
-        </figure>
-    </center>
+    <!-- Consigne  -->
+    <div id="q">
+        Remplis le texte à trous avec les mots suivants : </br>
+        <b>garder - carnets - eau - timbres - mouillés - ouvrir - guichet - courrier - écrit - collection - poste - demande - personne - soleil - enveloppe - carte - parapluie - portefeuille</b>
+    </div>
 
     <!-- Affichage du score -->
-    <div id="score"><h3>Tu as trouvé 0 mot sur 15.</h3></div>
+    <div id="score"><h3>Tu as trouvé 0 mot sur 18.</h3></div>
 
-     <!-- Texte à trous -->
-    Le corps bien droit, les 
+    <!-- Texte à trous -->
+    Paul paie ses factures d'
     <input type="text" id="mot1">
-    posées à plat sur les genoux, il 
-    <input type="text" id="mot2">
-    . L'
-    <input type="text" id="mot3">
-    , à sa gauche, joue.</br></br>
+    et de chauffage. Il n'aime pas les prélèvements.</br></br>
     
-    Il 
-    <input type="text" id="mot4">
-    . Ses bras se lèvent 
-    <input type="text" id="mot5">
-    , c'est à lui. 
-    </br></br>
+    Puis, il 
+    <input type="text" id="mot2" >
+    une lettre, signe et la glisse dans une 
+    <input type="text" id="mot3" >
+    autocollante.</br></br>
     
-    Son 
-    <input type="text" id="mot6">
-    se détend ; ses doigts courent sur le 
-    <input type="text" id="mot7">
-    du piano blanc. Il aime cette 
-    <input type="text" id="mot8">
-    ; c'est sa vie.     
-    </br></br>
-
-    Il a oublié les centaines de 
-    <input type="text" id="mot9">
-    venues l'écouter. Il s'est plongé dans un autre 
-    <input type="text" id="mot10">
-    , et sur son 
-    <input type="text" id="mot11">
-    se lit une agitation extrême. 
-    </br></br>
-
-    Puis, quand la dernière 
-    <input type="text" id="mot12">
-    s'est échappée de ses 
-    <input type="text" id="mot13">
-    , son visage redevient 
-    <input type="text" id="mot14">
-    . 
-    </br></br>
-    Alors, il se tourne vers le 
-    <input type="text" id="mot15">
-    qui applaudit. 
+    Paul n'a plus de 
+    <input type="text" id="mot4" >
+    pour affranchir son courrier.</br></br>
+    
+    Il décide d'aller acheter des timbres tout de suite ; il postera son 
+    <input type="text" id="mot5" >
+    en même temps.</br></br>
+    
+    Comme il pleut, il prend un 
+    <input type="text" id="mot6" >
+    . Il n'aime pas avoir les cheveux 
+    <input type="text" id="mot7" >
+    .</br></br>
+    
+    Paul arrive à la 
+    <input type="text" id="mot8" >
+    . Il ferme son parapluie et entre. Il n'y a 
+    <input type="text" id="mot9" >
+    avant lui, une chance !</br></br>
+    
+    L'employé lui 
+    <input type="text" id="mot10" >
+    de quoi il a besoin et lui sert 3
+    <input type="text" id="mot11" >
+    de timbres. Paul veut en avoir d'avance.</br></br>
+    
+    Paul, lui donne aussi les lettres à affranchir ; il les pose sur le 
+    <input type="text" id="mot12" >
+    .</br></br>
+    
+    Paul achète également un carnet de timbres de 
+    <input type="text" id="mot13" >
+    en plus. Le thème est les "insectes". Il pourra s'en servir ou les 
+    <input type="text" id="mot14" >
+    .</br></br>
+    
+    Après avoir réglé avec sa 
+    <input type="text" id="mot15" >
+    bancaire, Paul range ses timbres dans son 
+    <input type="text" id="mot16" >
+    .</br></br>
+    
+    Il salue l'employé et s'en va sans 
+    <input type="text" id="mot17" >
+    son parapluie. Le 
+    <input type="text" id="mot18" >
+    apparaît. 
 
     <!-- Boutons pour valider et effacer mes réponses -->
     </br> </br></br>
     <input type="button" value="Valider" onClick="valider()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
     <input type="button" value="Effacer mes réponses" onClick="effacer()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
     </br></br>
-</body>
+  </body>
 
+  <a href="./difficile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+</br></br></br></br></br></br>
 <script>
 
     var mot1 = document.getElementById("mot1"); 
@@ -101,6 +105,9 @@
     var mot13 = document.getElementById("mot13"); 
     var mot14 = document.getElementById("mot14"); 
     var mot15 = document.getElementById("mot15"); 
+    var mot16 = document.getElementById("mot16"); 
+    var mot17 = document.getElementById("mot17"); 
+    var mot18 = document.getElementById("mot18"); 
 
     function highlight_button(bouton){
       bouton.style.backgroundColor = "green";
@@ -118,81 +125,93 @@
     function actualiser_score(){
         var score = 0; 
 
-        if (mot1.value == "mains"){
+        if (mot1.value == "eau"){
             score += 1; 
         }
 
-        if (mot2.value == "attend"){
+        if (mot2.value == "écrit"){
             score += 1; 
         }
 
-        if (mot3.value == "orchestre"){
+        if (mot3.value == "enveloppe"){
             score += 1; 
         }
 
-        if (mot4.value == "écoute"){
+        if (mot4.value == "timbres"){
             score += 1; 
         }
 
-        if (mot5.value == "légèrement"){
+        if (mot5.value == "courrier"){
             score += 1; 
         }
 
-        if (mot6.value == "corps"){
+        if (mot6.value == "parapluie"){
             score += 1; 
         }
 
-        if (mot7.value == "clavier"){
+        if (mot7.value == "mouillés"){
             score += 1; 
         }
 
-        if (mot8.value == "musique"){
+        if (mot8.value == "poste"){
             score += 1; 
         }
 
-        if (mot9.value == "personnes"){
+        if (mot9.value == "personne"){
             score += 1; 
         }
 
-        if (mot10.value == "univers"){
+        if (mot10.value == "demande"){
             score += 1; 
         }
 
-        if (mot11.value == "visage"){
+        if (mot11.value == "carnets"){
             score += 1; 
         }
 
-        if (mot12.value == "note"){
+        if (mot12.value == "guichet"){
             score += 1; 
         }
 
-        if (mot13.value == "doigts"){
+        if (mot13.value == "collection"){
             score += 1; 
         }
 
-        if (mot14.value == "lisse"){
+        if (mot14.value == "garder"){
             score += 1; 
         }
 
-        if (mot15.value == "public"){
+        if (mot15.value == "carte"){
+            score += 1; 
+        }
+
+        if (mot16.value == "portefeuille"){
+            score += 1; 
+        }
+
+        if (mot17.value == "ouvrir"){
+            score += 1; 
+        }
+
+        if (mot18.value == "soleil"){
             score += 1; 
         }
 
         if(score > 1){
-            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mots sur 15.</h3>";
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mots sur 18.</h3>";
         }
         else {
-            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mot sur 15.</h3>";
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mot sur 18.</h3>";
         }
     }
 
     function reset_score(){
-        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 mot sur 15.</h3>";
+        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 mot sur 18.</h3>";
     }
 
     function verifier_texte_a_trous(){
 
-        if (mot1.value == "mains"){
+        if (mot1.value == "eau"){
             mot1.readOnly = true; 
             mot1.style.borderColor = "green"; 
         }
@@ -200,7 +219,7 @@
             mot1.style.borderColor = "red"; 
         }
 
-        if (mot2.value == "attend"){
+        if (mot2.value == "écrit"){
             mot2.readOnly = true; 
             mot2.style.borderColor = "green"; 
         }
@@ -208,7 +227,7 @@
             mot2.style.borderColor = "red"; 
         }
 
-        if (mot3.value == "orchestre"){
+        if (mot3.value == "enveloppe"){
             mot3.readOnly = true; 
             mot3.style.borderColor = "green"; 
         }
@@ -216,7 +235,7 @@
             mot3.style.borderColor = "red"; 
         }
 
-        if (mot4.value == "écoute"){
+        if (mot4.value == "timbres"){
             mot4.readOnly = true; 
             mot4.style.borderColor = "green"; 
         }
@@ -224,7 +243,7 @@
             mot4.style.borderColor = "red"; 
         }
 
-        if (mot5.value == "légèrement"){
+        if (mot5.value == "courrier"){
             mot5.readOnly = true; 
             mot5.style.borderColor = "green"; 
         }
@@ -232,7 +251,7 @@
             mot5.style.borderColor = "red"; 
         }
 
-        if (mot6.value == "corps"){
+        if (mot6.value == "parapluie"){
             mot6.readOnly = true; 
             mot6.style.borderColor = "green"; 
         }
@@ -240,7 +259,7 @@
             mot6.style.borderColor = "red"; 
         }
 
-        if (mot7.value == "clavier"){
+        if (mot7.value == "mouillés"){
             mot7.readOnly = true; 
             mot7.style.borderColor = "green"; 
         }
@@ -248,7 +267,7 @@
             mot7.style.borderColor = "red"; 
         }
 
-        if (mot8.value == "musique"){
+        if (mot8.value == "poste"){
             mot8.readOnly = true; 
             mot8.style.borderColor = "green"; 
         }
@@ -256,7 +275,7 @@
             mot8.style.borderColor = "red"; 
         }
 
-        if (mot9.value == "personnes"){
+        if (mot9.value == "personne"){
             mot9.readOnly = true; 
             mot9.style.borderColor = "green"; 
         }
@@ -264,7 +283,7 @@
             mot9.style.borderColor = "red"; 
         }
 
-        if (mot10.value == "univers"){
+        if (mot10.value == "demande"){
             mot10.readOnly = true; 
             mot10.style.borderColor = "green"; 
         }
@@ -272,7 +291,7 @@
             mot10.style.borderColor = "red"; 
         }
 
-        if (mot11.value == "visage"){
+        if (mot11.value == "carnets"){
             mot11.readOnly = true; 
             mot11.style.borderColor = "green"; 
         }
@@ -280,7 +299,7 @@
             mot11.style.borderColor = "red"; 
         }
 
-        if (mot12.value == "note"){
+        if (mot12.value == "guichet"){
             mot12.readOnly = true; 
             mot12.style.borderColor = "green"; 
         }
@@ -288,7 +307,7 @@
             mot12.style.borderColor = "red"; 
         }
 
-        if (mot13.value == "doigts"){
+        if (mot13.value == "collection"){
             mot13.readOnly = true; 
             mot13.style.borderColor = "green"; 
         }
@@ -296,7 +315,7 @@
             mot13.style.borderColor = "red"; 
         }
 
-        if (mot14.value == "lisse"){
+        if (mot14.value == "garder"){
             mot14.readOnly = true; 
             mot14.style.borderColor = "green"; 
         }
@@ -304,19 +323,44 @@
             mot14.style.borderColor = "red"; 
         }
 
-        if (mot15.value == "public"){
+        if (mot15.value == "carte"){
             mot15.readOnly = true; 
             mot15.style.borderColor = "green"; 
         }
         else {
             mot15.style.borderColor = "red"; 
         }
+
+        if (mot16.value == "portefeuille"){
+            mot16.readOnly = true; 
+            mot16.style.borderColor = "green"; 
+        }
+        else {
+            mot16.style.borderColor = "red"; 
+        }
+
+        if (mot17.value == "ouvrir"){
+            mot17.readOnly = true; 
+            mot17.style.borderColor = "green"; 
+        }
+        else {
+            mot17.style.borderColor = "red"; 
+        }
+
+        if (mot18.value == "soleil"){
+            mot18.readOnly = true; 
+            mot18.style.borderColor = "green"; 
+        }
+        else {
+            mot18.style.borderColor = "red"; 
+        }
+
     }
 
    function effacer(){
 
         reset_score(); 
-
+        
         mot1.value = ''; 
         mot1.readOnly = false;
         mot1.style.borderColor = "#2f4f4f"; 
@@ -376,6 +420,18 @@
         mot15.value = ''; 
         mot15.readOnly = false; 
         mot15.style.borderColor = "#2f4f4f"; 
+
+        mot16.value = ''; 
+        mot16.readOnly = false; 
+        mot16.style.borderColor = "#2f4f4f"; 
+
+        mot17.value = ''; 
+        mot17.readOnly = false; 
+        mot17.style.borderColor = "#2f4f4f"; 
+
+        mot18.value = ''; 
+        mot18.readOnly = false; 
+        mot18.style.borderColor = "#2f4f4f"; 
     }
 </script>
 </html>
