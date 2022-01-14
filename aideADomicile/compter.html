@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style01.css">
+    <title>Education</title>
+  </head>
+
+
+
+  <body>
+    <h2>Calculs - Aide à domicile</h2>
+
+    <!-- Explication des règles du jeu  -->
+    <div id="q">
+      Effectue les opérations à partir des énoncés et donne les résultats
+    </div>
+
+    <!-- Affichage du score -->
+    <div id="score"><h3>Tu as trouvé 0 résultat sur 4.</h3></div>
+
+     <!-- Formulaire -->
+    <h4> Anaïs a 3 seaux. Elle a 4 fois plus de balais que de seaux. Combien de balais a-t-elle ?
+    <input type="text" id="nb1" size="8">
+    </h4>
+
+    <h4>
+      Un magasin dispose de 48 aspirateurs. Il en reçoit 15 nouveaux lors de la dernière livraison. Il en a maintenant    
+      <input type="text" id="nb2" size="8"> en rayon. 
+    </h4>
+
+    <h4>
+      Clément a 78 épingles à linge mais depuis qu'il en a perdu 22, il lui en reste 
+      <input type="text" id="nb3" size="8">. 
+    </h4>
+
+    <h4>
+      Nathan a 50 € qu'il partage avec ses 4 amis. Ils ont chacun   
+      <input type="text" id="nb4" size="8"> €. 
+    </h4>
+
+
+    </br></br>
+    <input type="button" value="Valider" onClick="valider()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+    <input type="button" value="Effacer mes réponses" onClick="effacer()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+
+    </body>
+
+    <br><br><br>
+  <a href="../aidedomicile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
+
+<script>
+
+    var res1 = document.getElementById("nb1"); 
+    var res2 = document.getElementById("nb2");
+    var res3 = document.getElementById("nb3");
+    var res4 = document.getElementById("nb4");
+    
+    function highlight_button(bouton){
+      bouton.style.backgroundColor = "green";
+    }
+
+    function delight_button(bouton){
+      bouton.style.backgroundColor = "#333333";
+    }
+
+    function reset_score(){
+        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 résultat sur 4.</h3>";
+    }
+
+    function valider(){
+        actualiser_score()
+        verifieResultats()
+    }
+
+    function actualiser_score(){
+        var score = 0; 
+        
+        if (res1.value == 12){
+            score += 1; 
+        }
+
+        if (res2.value == 63){
+            score += 1; 
+        }
+
+        if(res3.value == 56){
+            score += 1; 
+        }
+
+        if(res4.value == 10){
+            score += 1; 
+        }
+
+        if(score > 1){
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " résultats sur 4.</h3>";
+        }
+        else {
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " résultat sur 4.</h3>";
+        }
+    }
+
+    function verifieResultats(){
+        if (res1.value == 12){
+            res1.readOnly = true; 
+            res1.style.borderColor = "green"; 
+        }
+        else {
+            res1.style.borderColor = "red"; 
+        }
+        if (res2.value == 63){
+            res2.readOnly = true; 
+            res2.style.borderColor = "green"; 
+        }
+        else {
+            res2.style.borderColor = "red";
+        }
+        if (res3.value == 56){
+            res3.readOnly = true; 
+            res3.style.borderColor = "green"; 
+        }
+        else {
+            res3.style.borderColor = "red";
+        }
+        if (res4.value == 10){
+            res4.readOnly = true; 
+            res4.style.borderColor = "green"; 
+        }
+        else {
+            res4.style.borderColor = "red";
+        }
+    }
+
+   function effacer(){
+        reset_score(); 
+
+        res1.value = ''; 
+        res1.readOnly = false;
+        res1.style.borderColor = "#2f4f4f"; 
+
+        res2.value = ''; 
+        res2.readOnly = false; 
+        res2.style.borderColor = "#2f4f4f"; 
+
+        res3.value = ''; 
+        res3.readOnly = false;
+        res3.style.borderColor = "#2f4f4f"; 
+
+        res4.value = ''; 
+        res4.readOnly = false;  
+        res4.style.borderColor = "#2f4f4f"; 
+ 
+    }
+
+</script>
+</html>
