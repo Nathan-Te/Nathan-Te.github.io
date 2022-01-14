@@ -26,13 +26,13 @@
     <!-- Réponses possibles  -->
     <form>
       <input type="button" id="btnValidation" name="btnValidation" value="Confirmer" onClick="Validation()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
-      <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)" disabled>
+      <input type="button" id="btnReset" name="btnReset" value="Effacer ma réponse" onClick="EffacerRep()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
     </form>
 
     <div id="reponse"> </div>
     
   </body>
-
+</br>
   <a href="./facile.html"><input type="button" value="Retour" id="bouton_retour" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)"></a>
 </br></br></br></br></br></br>
 <script>
@@ -41,22 +41,23 @@
 
   function EffacerRep(){
     val.value = ''; 
-    val.disabled = false;
-    document.getElementById("btnValidation").disabled = false; 
-    document.getElementById("btnReset").disabled = true;
   }
 
   function Validation(){
-    val.disabled = true;
     if (val.value == "ACDFHIKMOQRTWXY") {
       reponse.innerHTML = 'Félicitations ';
-      document.getElementById("btnValidation").disabled = true; 
     }
     else{
       reponse.innerHTML = 'Faux, essayez encore !';
-      document.getElementById("btnReset").disabled = false; 
-      document.getElementById("btnValidation").disabled = true; 
     }
   }
+
+  function highlight_button(bouton){
+      bouton.style.backgroundColor = "green";
+    }
+
+    function delight_button(bouton){
+      bouton.style.backgroundColor = "#333333";
+    }
 </script>
 </html>

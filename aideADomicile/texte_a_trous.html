@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../style.css">
+    <title>Education</title>
+  </head>
+
+  <body>
+    <h2>Texte à trous - Tâches ménagères</h2>
+    <!-- Explication des règles du jeu  -->
+    <div id="q">
+        Remplis le texte à trous avec les mots suivants : </br>
+        <b>balayer - faire la vaisselle - faire ton lit - griller - laver - mettre la table - préparé le repas - raccommoder - ranger - repasser</b>
+    </div>
+
+    <!-- Affichage du score -->
+    <div id="score"><h3>Tu as trouvé 0 mot sur 10.</h3></div>
+
+     <!-- Texte à trous -->
+    1. Ta chemise est toute froissée, il faut la 
+    <input type="text" id="mot1">.</br></br>
+
+    2. Nous sommes 3 à manger ce midi, peux-tu 
+    <input type="text" id="mot2" > s'il te plaît ?</br></br>
+
+    3. Ce manteau a un accroc, donne, je vais le 
+    <input type="text" id="mot3" >.</br></br>
+
+    4. Ce que je n'aime pas, après le repas c'est 
+    <input type="text" id="mot4" >.</br></br>
+
+    5. Qu'est-ce qu'on mange ce midi ? Tu verras quand j'aurai 
+    <input type="text" id="mot5" >.</br></br>
+
+    6. David, pense à 
+    <input type="text" id="mot6" > avant de descendre, tu as les draps sur la chaise.</br></br>
+    
+    7. Est-ce que tu pourras 
+    <input type="text" id="mot7" > les quelques miettes sur le sol ?</br></br>
+    
+    8. Viens discuter au cellier, je dois 
+    <input type="text" id="mot8" > du linge qui ne passe pas en machine.</br></br>
+    
+    9. Quel bazar ici, tu es prié de 
+    <input type="text" id="mot9" > ta chambre de suite.</br></br>
+    
+    10. Laisse 
+    <input type="text" id="mot10" > un peu plus les saucisses sur le barbecue !</br></br>
+   
+    <!-- Boutons pour valider et effacer mes réponses -->
+    </br> </br></br>
+    <input type="button" value="Valider" onClick="valider()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+    <input type="button" value="Effacer mes réponses" onClick="effacer()" onmouseenter="highlight_button(this)" onmouseleave="delight_button(this)">
+    </br></br>
+  </body>
+
+<script>
+
+    var mot1 = document.getElementById("mot1"); 
+    var mot2 = document.getElementById("mot2"); 
+    var mot3 = document.getElementById("mot3"); 
+    var mot4 = document.getElementById("mot4"); 
+    var mot5 = document.getElementById("mot5"); 
+    var mot6 = document.getElementById("mot6"); 
+    var mot7 = document.getElementById("mot7"); 
+    var mot8 = document.getElementById("mot8"); 
+    var mot9 = document.getElementById("mot9"); 
+    var mot10 = document.getElementById("mot10"); 
+
+    function highlight_button(bouton){
+      bouton.style.backgroundColor = "green";
+    }
+
+    function delight_button(bouton){
+      bouton.style.backgroundColor = "#333333";
+    }
+
+    function valider(){
+        actualiser_score()
+        verifier_texte_a_trous()
+    }
+
+    function actualiser_score(){
+        var score = 0; 
+
+        if (mot1.value == "repasser"){
+            score += 1; 
+        }
+
+        if (mot2.value == "mettre la table"){
+            score += 1;
+        }
+
+        if (mot3.value == "raccommoder"){
+            score += 1; 
+        }
+
+        if (mot4.value == "faire la vaisselle"){
+            score += 1; 
+        }
+
+        if (mot5.value == "préparé le repas"){
+            score += 1; 
+        }
+
+        if (mot6.value == "faire ton lit"){
+            score += 1; 
+        }
+
+        if (mot7.value == "balayer"){
+            score += 1; 
+        }
+
+        if (mot8.value == "laver"){
+            score += 1; 
+        }
+
+        if (mot9.value == "ranger"){
+            score += 1; 
+        }
+
+        if (mot10.value == "griller"){
+            score += 1; 
+        }
+
+        if(score > 1){
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mots sur 10.</h3>";
+        }
+        else {
+            document.getElementById("score").innerHTML = "<h3> Tu as trouvé " + score + " mot sur 10.</h3>";
+        }
+    }
+
+    function reset_score(){
+        document.getElementById("score").innerHTML = "<h3>Tu as trouvé 0 mot sur 10.</h3>";
+    }
+
+    function verifier_texte_a_trous(){
+
+        if (mot1.value == "repasser"){
+            mot1.readOnly = true; 
+            mot1.style.borderColor = "green"; 
+        }
+        else {
+            mot1.style.borderColor = "red"; 
+        }
+
+        if (mot2.value == "mettre la table"){
+            mot2.readOnly = true; 
+            mot2.style.borderColor = "green"; 
+        }
+        else {
+            mot2.style.borderColor = "red"; 
+        }
+
+        if (mot3.value == "raccommoder"){
+            mot3.readOnly = true; 
+            mot3.style.borderColor = "green"; 
+        }
+        else {
+            mot3.style.borderColor = "red"; 
+        }
+
+        if (mot4.value == "faire la vaisselle"){
+            mot4.readOnly = true; 
+            mot4.style.borderColor = "green"; 
+        }
+        else {
+            mot4.style.borderColor = "red"; 
+        }
+
+        if (mot5.value == "préparé le repas"){
+            mot5.readOnly = true; 
+            mot5.style.borderColor = "green"; 
+        }
+        else {
+            mot5.style.borderColor = "red"; 
+        }
+
+        if (mot6.value == "faire ton lit"){
+            mot6.readOnly = true; 
+            mot6.style.borderColor = "green"; 
+        }
+        else {
+            mot6.style.borderColor = "red"; 
+        }
+
+        if (mot7.value == "balayer"){
+            mot7.readOnly = true; 
+            mot7.style.borderColor = "green"; 
+        }
+        else {
+            mot7.style.borderColor = "red"; 
+        }
+
+        if (mot8.value == "laver"){
+            mot8.readOnly = true; 
+            mot8.style.borderColor = "green"; 
+        }
+        else {
+            mot8.style.borderColor = "red"; 
+        }
+
+        if (mot9.value == "ranger"){
+            mot9.readOnly = true; 
+            mot9.style.borderColor = "green"; 
+        }
+        else {
+            mot9.style.borderColor = "red"; 
+        }
+
+        if (mot10.value == "griller"){
+            mot10.readOnly = true; 
+            mot10.style.borderColor = "green"; 
+        }
+        else {
+            mot10.style.borderColor = "red"; 
+        }
+    }
+
+   function effacer(){
+
+        reset_score(); 
+
+        mot1.value = ''; 
+        mot1.readOnly = false;
+        mot1.style.borderColor = "#2f4f4f"; 
+    
+        mot2.value = ''; 
+        mot2.readOnly = false; 
+        mot2.style.borderColor = "#2f4f4f"; 
+
+        mot3.value = ''; 
+        mot3.readOnly = false; 
+        mot3.style.borderColor = "#2f4f4f"; 
+
+        mot4.value = ''; 
+        mot4.readOnly = false; 
+        mot4.style.borderColor = "#2f4f4f"; 
+
+        mot5.value = ''; 
+        mot5.readOnly = false; 
+        mot5.style.borderColor = "#2f4f4f"; 
+
+        mot6.value = ''; 
+        mot6.readOnly = false; 
+        mot6.style.borderColor = "#2f4f4f"; 
+
+        mot7.value = ''; 
+        mot7.readOnly = false; 
+        mot7.style.borderColor = "#2f4f4f"; 
+
+        mot8.value = ''; 
+        mot8.readOnly = false; 
+        mot8.style.borderColor = "#2f4f4f"; 
+
+        mot9.value = ''; 
+        mot9.readOnly = false; 
+        mot9.style.borderColor = "#2f4f4f"; 
+
+        mot10.value = ''; 
+        mot10.readOnly = false; 
+        mot10.style.borderColor = "#2f4f4f"; 
+    }
+</script>
+</html>
